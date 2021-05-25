@@ -2,7 +2,10 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use app\Http\Controllers\Api\LevelController;
+use App\Http\Api\LevelController;
+use App\Http\Api\TestLevelController;
+use App\Http\Api\TypeObstacleController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +22,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('Level', LevelController::class);
+Route::resource('levels', LevelController::class);
+Route::resource('test-levels', TestLevelController::class);
+Route::resource('type-obstacle', TypeObstacleController::class);

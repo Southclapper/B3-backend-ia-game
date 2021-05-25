@@ -6,11 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateTypeObstaclesTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('type_obstacles', function (Blueprint $table) {
@@ -21,14 +16,10 @@ class CreateTypeObstaclesTable extends Migration
             $table->string('apparence');
             $table->integer('nbr_min_per_level');
             $table->integer('nbr_max_per_level');
+            $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('type_obstacles');

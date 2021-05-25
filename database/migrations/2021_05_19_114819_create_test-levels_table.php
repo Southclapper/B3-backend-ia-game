@@ -13,10 +13,10 @@ class CreateTestLevelsTable extends Migration
      */
     public function up()
     {
-        Schema::create('test-levels', function (Blueprint $table) {
+        Schema::create('test_levels', function (Blueprint $table) {
             $table->id();
             $table->integer('level_reference');
-            $table->date('date_de_passage');
+            $table->timestamp('date_de_passage')->unique();
             $table->integer('resultat');
             $table->timestamps();
         });
